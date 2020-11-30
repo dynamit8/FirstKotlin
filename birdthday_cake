@@ -1,0 +1,68 @@
+fun main() {
+    val age = 35
+    val candles = age / 5
+    val width = age * 2
+    val layer = age - 20
+    val age_day = age * 365
+    printHappyBirthday("Jor", "*")
+	
+    
+    println("You're already ${age_day} days old!")
+    
+    printCandles(candles, age)
+    printTopCake(width)
+    printCake(layer, width)
+    println("")
+}
+fun printFire(candles: Int, age: Int){
+    repeat(age/2){
+        print(" ")
+    }
+    repeat(candles){
+        print("\"")
+        repeat(age/candles){
+        	print(" ")
+    	}
+    }
+    print("\n")
+}
+fun printCandles(candles: Int, age: Int){
+    printFire(candles, age)
+    repeat(age/2){
+        print(" ")
+    }
+    repeat(candles){
+        print("|")
+        repeat(age/candles){
+        	print(" ")
+    	}
+    }
+    print("\n")
+}
+fun printTopCake(width:Int){
+    repeat(width){
+        print("=")
+    }
+    print("\n")
+}
+fun printCake(layer:Int, width:Int){
+    repeat(layer){
+        print("|")
+        repeat(width - 2){
+            print("~")
+        }
+        print("|")
+        print("\n")
+    }
+}
+fun printBorder(sym:String){
+    repeat(23){
+        print(sym)
+    }
+    print("\n")
+}
+fun printHappyBirthday(name:String, sym:String){
+    printBorder(sym)
+    println("Happy Birthday ${name}!")
+    printBorder(sym)
+}
